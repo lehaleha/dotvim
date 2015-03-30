@@ -3,6 +3,14 @@ Vim config
     * .vimrc - Vim config
     * setup.cmd - Windows setup script
 
+Installation
+------------
+
+    git clone git://github.com/lehaleha/dotvim.git ~/.vim
+
+    run setup script
+    
+
 TODO
 ----
     * Update config to work both on Mac/Windows.
