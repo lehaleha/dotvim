@@ -1,46 +1,93 @@
-set nocompatible
-source $VIMRUNTIME/vimrc_example.vim
+" Basics
+"---------------------
+set nocompatible              " be iMproved, required
+filetype off                  " required by Vundle
+let $LANG = 'en'
+
+
+" Hacks & workarounds
+"---------------------
+" None now (yet).
+
+" Vundle setup
+" ------------
+
+" set the runtime path to include Vundle and initialize
+" NOTE path specified for Windows only, on *NIX default settings are OK:
+"
+"       set rtp+=~/.vim/bundle/Vundle.vim
+"       call vundle#begin()
+"
+set rtp+=~/vimfiles/bundle/Vundle.vim/
+let path='~/vimfiles/bundle'
+call vundle#begin(path)
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+"Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+"Plugin 'L9'
+" Git plugin not hosted on GitHub
+"Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+"Plugin 'user/L9', {'name': 'newL9'}
+
+Plugin 'scrooloose/nerdtree.git'        " NERDTree
+Plugin 'vim-scripts/YankRing.vim'       " YankRing 
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+" Common
+" ------
+
+"source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
-" To fix issue on Windows with temp folder too deep in /user/bla-bla
-" Should be fixed, update vim!
-let $TMP = "c:\temp"
-let $TEMP = "c:\temp"
-let $LANG = 'en'
-
-" устанавливаем размеры окна по умолчанию
-set columns=140
-set lines=50
-
-" Ширина колонки складок
-set foldcolumn=2
-
-" установить keymap, чтобы по Ctrl+^ переключался на русский и обратно
+" Setup Ctrl+^ to switch between English/Russian
 set keymap=russian-jcukenwin 
-" по умолчанию - латинская раскладка
+" Set English layout as default
 set iminsert=0
 
-" по умолчанию - латинская раскладка при поиске
+" Set English layout as default for search
 set imsearch=0
-" игнорировать регистр при поиске
+" Ignore case in search
 set ic
-" подсвечивать поиск
+" Highlight search
 set hls
-" использовать инкрементальный поиск
+" Use incremental search
 set is
-" использовать регистрозависимый поиск при вводе символов в верхнем регистре
+" Switch to case-sensitive search on first uppercase symbol
 set smartcase
 
 " Отключаем создание бэкапов
 set nobackup
 " Отключаем создание swap файлов
 set noswapfile
-
-" минимальная высота окна пусть будет 0 (по умолчанию - 1)
-set winminheight=0
-" установить шрифт DejaVu LGC Sans Mono
-set guifont=Consolas:h11:cRUSSIAN
 
 " настраиваю для работы с русскими словами (чтобы w, b, * понимали
 " русские слова)
@@ -105,41 +152,29 @@ set showcmd
 " Включаем отображение дополнительной информации в статусной строке
 set statusline=%<%f%h%m%r%=format=%{&fileformat}\ file=%{&fileencoding}\ enc=%{&encoding}\ %b\ 0x%B\ %l,%c%V\ %P
 
-"Выбираем цветовую схему
-"-----------------------
+
+" Appearance
+"------------
+
+" Color schema
 colo lightcolors
 
-" Настраиваем фолдинг 
-" ------------------
-set foldenable
-set foldmethod=manual
+" gVim window default size
+set columns=140
+set lines=50
 
-" Быстрое переключение методов (пока не разобрался, как использовать другие
-" методы %)) 
-"map <F4>  <esc>:call SWITCHFOLD()<cr>
-"function SWITCHFOLD()
-"    if &foldmethod=="marker"
-"        set foldmethod=syntax
-"        return
-"    endif
-"    if &foldmethod=="syntax"
-"        set foldmethod=indent
-"        return
-"    endif
-"    if &foldmethod=="indent"
-"        set foldmethod=manual
-"        return
-"    endif
-"    if &foldmethod=="manual"
-"        set foldmethod=marker
-"        return
-"    endif
-"endfunction
+" Fold column width
+set foldcolumn=2
 
-" Прочее
-" ------
+" минимальная высота окна пусть будет 0 (по умолчанию - 1)
+set winminheight=0
+" установить шрифт DejaVu LGC Sans Mono
+set guifont=Consolas:h11:cRUSSIAN
 
-filetype plugin indent on
-syntax on
+
+" Unknown stuff
+" -------------
+
 runtime! ftdetect/*.vim
+
 
