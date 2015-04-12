@@ -1,21 +1,17 @@
-Vim config
-----------
+Vim config:
+-----------
     * .vimrc - Vim config
     * setup.cmd - Windows setup script
 
-Installation
-------------
+Windows installation:
+---------------------
 
-    git clone git://github.com/lehaleha/dotvim.git ~/.vim
+    git clone https://github.com/lehaleha/dotvim.git %userprofile%/.vim
 
-    run setup script
-    
+    run setup script with admin privileges
 
 TODO
 ----
-    * Extract Vundle config to separate file (http://gmarik.info/blog/2011/05/17/chicken-or-egg-dilemma)
     * Update config to work both on Mac/Windows.
     * Add Mac/Linux setup script
     * Modify Windows setup script to request elevated cmd automatically.
-    * Add mkdir c:\temp, as .vimrc references it.
-    * Move configs into users folder on Windows.
