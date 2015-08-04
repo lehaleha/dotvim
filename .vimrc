@@ -101,7 +101,8 @@ set statusline=%<%f%h%m%r%=format=%{&fileformat}\ file=%{&fileencoding}\ enc=%{&
 "------------
 
 " Color schema
-colo lightcolors
+"colo lightcolors
+colorscheme jellybeans
 
 " gVim window default size
 set columns=140
