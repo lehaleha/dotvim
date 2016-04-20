@@ -1,6 +1,10 @@
 echo Setup curl.cmd for Vundle (https://github.com/gmarik/Vundle.vim/wiki/Vundle-for-Windows)
 copy curl.cmd "c:\Program Files (x86)\Git\cmd\curl.cmd"
 
+REM Copy color schemas
+mkdir ..\vimfiles\Colors
+copy .\Colors\*.* ..\vimfiles\Colors
+
 echo Get Vundle
 pushd %USERPROFILE%
 git clone https://github.com/gmarik/Vundle.vim.git ./vimfiles/bundle/Vundle.vim
