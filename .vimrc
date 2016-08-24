@@ -60,6 +60,8 @@ set nowrap
 syntax on
 " Turn off max text width, not needed in most cases
 set textwidth=0
+" Set visual bell 
+set vb
 
 " При переходе в новый буфер (с помощью :e :next и т.д.) делать текущий
 " скрытым
