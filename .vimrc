@@ -60,8 +60,6 @@ set nowrap
 syntax on
 " Turn off max text width, not needed in most cases
 set textwidth=0
-" Set visual bell 
-set vb
 
 " При переходе в новый буфер (с помощью :e :next и т.д.) делать текущий
 " скрытым
@@ -79,6 +77,7 @@ set guioptions-=e
 
 " Добавляем "поля скроллинга"
 set scrolloff=5
+
 " Ускоренное передвижение по тексту
 nmap <C-H> 5h
 nmap <C-J> 5j
@@ -91,8 +90,12 @@ imap <C-J> <Esc>j
 imap <C-K> <Esc>k
 imap <C-L> <Esc>l
 
-" Remap kj to Esc
+" Remap kj/jk to Esc
+imap jk <Esc>
 imap kj <Esc>
+
+" Reduce wait timeout for combos, while we are here
+set timeoutlen=350
 
 " Добавление пустых строк до и после текущей без перехода в режим вставки
 map <S-Enter> O<Esc>
