@@ -78,10 +78,19 @@ set guioptions-=e
 " ƒобавл€ем "пол€ скроллинга"
 set scrolloff=5
 " ”скоренное передвижение по тексту
-    nmap <C-H> 5h
-    nmap <C-J> 5j
-    nmap <C-K> 5k
-    nmap <C-L> 5l
+nmap <C-H> 5h
+nmap <C-J> 5j
+nmap <C-K> 5k
+nmap <C-L> 5l
+
+" Exit from insert mode and move on Ctrl-move
+imap <C-H> <Esc>h
+imap <C-J> <Esc>j
+imap <C-K> <Esc>k
+imap <C-L> <Esc>l
+
+" Remap kj to Esc
+imap kj <Esc>
 
 " ƒобавление пустых строк до и после текущей без перехода в режим вставки
 map <S-Enter> O<Esc>
