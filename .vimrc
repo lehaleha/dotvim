@@ -90,9 +90,11 @@ imap <C-J> <Esc>j
 imap <C-K> <Esc>k
 imap <C-L> <Esc>l
 
-" Remap kj/jk to Esc
-imap jk <Esc>
-imap kj <Esc>
+" Remap kj/jk/fj/jf to Esc
+"imap jk <Esc>
+"imap kj <Esc>
+imap fj <Esc>
+imap jf <Esc>
 
 " Reduce wait timeout for combos, while we are here
 set timeoutlen=350
