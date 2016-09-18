@@ -83,6 +83,10 @@ nmap <C-H> 5h
 nmap <C-J> 5j
 nmap <C-K> 5k
 nmap <C-L> 5l
+vmap <C-H> 5h
+vmap <C-J> 5j
+vmap <C-K> 5k
+vmap <C-L> 5l
 
 " Exit from insert mode and move on Ctrl-move
 imap <C-H> <Esc>h
