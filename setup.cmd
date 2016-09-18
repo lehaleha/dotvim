@@ -15,5 +15,5 @@ mklink /H "../_vimrc" "./.vimrc"
 mklink /H "../.bundles.vim" "./.bundles.vim"
 
 REM Run Vim for the first time to install bundles
-set PATH=%PATH%;C:\Program Files (x86)\Vim\vim74\
+set PATH=%PATH%;C:\Program Files (x86)\Vim\vim80\
 vim -u ./.bundles.vim +BundleInstall +q
